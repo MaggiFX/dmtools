@@ -57,7 +57,7 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Hauptfenster.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -66,9 +66,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Klassen\Abenteuer.cs" />
-    <Compile Include="Klassen\Spieler.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Klassen\Charakter.cs" />
+    <Compile Include="Klassen\Pawn.cs" />
+    <Compile Include="Klassen\SpielerCharakter.cs" />
+    <Compile Include="Hauptfenster.xaml.cs">
+      <DependentUpon>Hauptfenster.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

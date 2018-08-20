@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dmtools"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Hauptfenster"
+        Height="450"
+        Width="800">
     <Grid>
-        
+        <TabControl HorizontalAlignment="Center" VerticalAlignment="Center" Width="400" Height="400">
+            <TabItem Header="TabItem"/>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>

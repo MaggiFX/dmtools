@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dmtools
+namespace dmtools.Klassen
 {
-    class Spieler
+    class Charakter:Pawn
     {
     }
 }
