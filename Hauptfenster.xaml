@@ -9,9 +9,9 @@
         Height="450"
         Width="800">
     <Grid>
-        <TabControl HorizontalAlignment="Center" VerticalAlignment="Center" Width="400" Height="400">
-            <TabItem Header="TabItem"/>
-            <TabItem Header="TabItem">
+        <TabControl Margin="10,10,10,9">
+            <TabItem Header="Admin"/>
+            <TabItem Header="Spieler">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
