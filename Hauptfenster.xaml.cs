@@ -17,15 +17,24 @@ using LiteDB;
 
 namespace dmtools
 {
-    /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-            
+            LadeAbenteuer();
+            Start();
+        }
+
+        private void LadeAbenteuer()
+        {
+
+        }
+
+        private void Start()
+        {
+
         }
     }
 }

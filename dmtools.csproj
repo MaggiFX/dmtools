@@ -69,9 +69,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Klassen\Abenteuer.cs" />
-    <Compile Include="Klassen\Charakter.cs" />
-    <Compile Include="Klassen\Pawn.cs" />
-    <Compile Include="Klassen\SpielerCharakter.cs" />
+    <Compile Include="Klassen\Items\Item.cs" />
+    <Compile Include="Klassen\Orte\Kontinent.cs" />
+    <Compile Include="Klassen\Orte\Land.cs" />
+    <Compile Include="Klassen\Orte\Poi.cs" />
+    <Compile Include="Klassen\Orte\Stadt.cs" />
+    <Compile Include="Klassen\Orte\Welt.cs" />
+    <Compile Include="Klassen\Pawns\Charakter.cs" />
+    <Compile Include="Klassen\Pawns\Pawn.cs" />
+    <Compile Include="Klassen\Pawns\SpielerCharakter.cs" />
     <Compile Include="Hauptfenster.xaml.cs">
       <DependentUpon>Hauptfenster.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -104,5 +110,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
