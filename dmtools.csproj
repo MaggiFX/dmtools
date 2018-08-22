@@ -70,6 +70,7 @@
     </Compile>
     <Compile Include="Klassen\Abenteuer.cs" />
     <Compile Include="Klassen\Items\Item.cs" />
+    <Compile Include="Klassen\Items\Waffe.cs" />
     <Compile Include="Klassen\Orte\Kontinent.cs" />
     <Compile Include="Klassen\Orte\Land.cs" />
     <Compile Include="Klassen\Orte\Poi.cs" />

@@ -23,8 +23,8 @@ namespace dmtools
         public MainWindow()
         {
             InitializeComponent();
-            LadeAbenteuer();
-            Start();
+            //LadeAbenteuer();
+            //NeuesAbenteuer();
         }
 
         private void LadeAbenteuer()
@@ -32,7 +32,7 @@ namespace dmtools
 
         }
 
-        private void Start()
+        private void NeuesAbenteuer()
         {
 
         }

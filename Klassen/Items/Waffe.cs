@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace dmtools.Klassen.Items
 {
-    class Item
+    class Waffe
     {
-
     }
 }
