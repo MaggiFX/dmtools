@@ -4,9 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dmtools.Orte
+namespace dmtools
 {
-    class Welt
+    public class Welt
     {
+        public string Name { get; set; }
+
+        public List<Kontinent> kontinente;
+
+        public Welt(string name)
+        {
+            Name = name;
+        }
     }
 }

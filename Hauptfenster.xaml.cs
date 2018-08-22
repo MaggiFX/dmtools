@@ -25,6 +25,7 @@ namespace dmtools
             InitializeComponent();
             //LadeAbenteuer();
             //NeuesAbenteuer();
+            //Demo();
         }
 
         private void LadeAbenteuer()
@@ -35,6 +36,18 @@ namespace dmtools
         private void NeuesAbenteuer()
         {
 
+        }
+
+        private void Demo()
+        {
+            Abenteuer testabenteuer = new Abenteuer("World of Warcraft");
+            Welt testwelt = new Welt("Azeroth");
+            Kontinent testkontinent = new Kontinent("Kalimdor");
+            Land testland = new Land("Durotan");
+            Stadt teststadt = new Stadt("Ogrimmar");
+            Poi testpoi = new Poi("Ragefire Chasm");
+
+            
         }
     }
 }

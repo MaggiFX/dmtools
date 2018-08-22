@@ -4,9 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dmtools.Klassen.Orte
+namespace dmtools
 {
-    class Land
+    public class Land
     {
+        public string Name { get; set; }
+
+        public List<Stadt> städte;
+
+        public Land(string name)
+        {
+            Name = name;
+        }
     }
 }

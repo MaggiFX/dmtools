@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace dmtools
 {
-    class Abenteuer
+    public class Abenteuer
     {
+        public string Name { get; set; }
+
+        public List<Welt> welten;
+
+        public Abenteuer(string name)
+        {
+            Name = name;
+        }
     }
 }
