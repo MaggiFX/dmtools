@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Newtonsoft.Json;
-using LiteDB;
 
 namespace dmtools
 {
@@ -25,7 +24,7 @@ namespace dmtools
             InitializeComponent();
             //LadeAbenteuer();
             //NeuesAbenteuer();
-            //Demo();
+            Demo();
         }
 
         private void LadeAbenteuer()
@@ -40,14 +39,14 @@ namespace dmtools
 
         private void Demo()
         {
-            Abenteuer testabenteuer = new Abenteuer("World of Warcraft");
-            Welt testwelt = new Welt("Azeroth");
-            Kontinent testkontinent = new Kontinent("Kalimdor");
-            Land testland = new Land("Durotan");
-            Stadt teststadt = new Stadt("Ogrimmar");
-            Poi testpoi = new Poi("Ragefire Chasm");
+            var testabenteuer   = new Abenteuer ("World of Warcraft");
+            var testwelt        = new Welt      ("Azeroth");
+            var testwelt2       = new Welt      ("Draenor");
+            var testkontinent   = new Kontinent ("Kalimdor");
+            var testland        = new Land      ("Durotan");
+            var teststadt       = new Stadt     ("Ogrimmar");
+            var testpoi         = new Poi       ("Ragefire Chasm");
 
-            
         }
     }
 }
