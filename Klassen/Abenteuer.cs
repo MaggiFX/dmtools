@@ -10,7 +10,12 @@ namespace dmtools
     {
         public string Name { get; set; }
 
-        public List<Welt> welten;
+        public List<Welt> Welten = new List<Welt>();
+
+        public Abenteuer()
+        {
+            Name = "Test";
+        }
 
         public Abenteuer(string name)
         {

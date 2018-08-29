@@ -13,6 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Newtonsoft.Json;
+using System.Data.SQLite;
+using System.IO;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace dmtools
 {
@@ -46,6 +50,19 @@ namespace dmtools
             var testland        = new Land      ("Durotan");
             var teststadt       = new Stadt     ("Ogrimmar");
             var testpoi         = new Poi       ("Ragefire Chasm");
+
+            teststadt.POIS.Add(testpoi);
+            testland.Städte.Add(teststadt);
+            testkontinent.Länder.Add(testland);
+            testwelt.Kontinente.Add(testkontinent);
+            testabenteuer.Welten.Add(testwelt);
+            testabenteuer.Welten.Add(testwelt2);
+
+            var ser = new XmlSerializer(typeof(Abenteuer));
+
+            var writer = new StreamWriter("hase.xml");
+            ser.Serialize(writer, testabenteuer);
+            writer.Close();
 
         }
     }

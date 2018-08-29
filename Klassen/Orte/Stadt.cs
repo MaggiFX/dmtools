@@ -10,7 +10,7 @@ namespace dmtools
     {
         public string Name { get; set; }
 
-        public List<Poi> pois;
+        public List<Poi> POIS = new List<Poi>();
 
         public Stadt(string name)
         {

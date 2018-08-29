@@ -10,7 +10,7 @@ namespace dmtools
     {
         public string Name { get; set; }
 
-        public List<Kontinent> kontinente;
+        public List<Kontinent> Kontinente = new List<Kontinent>();
 
         public Welt(string name)
         {

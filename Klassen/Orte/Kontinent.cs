@@ -10,7 +10,7 @@ namespace dmtools
     {
         public string Name { get; set; }
 
-        public List<Land> länder;
+        public List<Land> Länder = new List<Land>();
 
         public Kontinent(string name)
         {
