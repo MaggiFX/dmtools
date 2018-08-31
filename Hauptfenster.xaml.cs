@@ -43,7 +43,7 @@ namespace dmtools
 
         private void Demo()
         {
-            var testabenteuer   = new Abenteuer ("World of Warcraft");
+            var testabenteuer   = new Abenteuer ();
             var testwelt        = new Welt      ("Azeroth");
             var testwelt2       = new Welt      ("Draenor");
             var testkontinent   = new Kontinent ("Kalimdor");
@@ -55,12 +55,12 @@ namespace dmtools
             testland.Städte.Add(teststadt);
             testkontinent.Länder.Add(testland);
             testwelt.Kontinente.Add(testkontinent);
-            testabenteuer.Welten.Add(testwelt);
-            testabenteuer.Welten.Add(testwelt2);
+            //testabenteuer.Welten.Add(testwelt);
+            //testabenteuer.Welten.Add(testwelt2);
 
-            var ser = new XmlSerializer(typeof(Abenteuer));
+            XmlSerializer ser = new XmlSerializer(typeof(Abenteuer));
 
-            var writer = new StreamWriter("hase.xml");
+            TextWriter writer = new StreamWriter("hase.xml");
             ser.Serialize(writer, testabenteuer);
             writer.Close();
 

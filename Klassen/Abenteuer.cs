@@ -6,20 +6,18 @@ using System.Threading.Tasks;
 
 namespace dmtools
 {
+    [Serializable()]
     public class Abenteuer
     {
-        public string Name { get; set; }
-
-        public List<Welt> Welten = new List<Welt>();
-
         public Abenteuer()
         {
-            Name = "Test";
+
         }
 
-        public Abenteuer(string name)
-        {
-            Name = name;
-        }
+        //public string Name { get; set; }
+
+        //public List<Welt> Welten = new List<Welt>();
+
+        
     }
 }
