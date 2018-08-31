@@ -9,14 +9,14 @@ namespace dmtools
     [Serializable()]
     public class Abenteuer
     {
-        public Abenteuer()
+        public Abenteuer(string name)
         {
-
+            Name = name;
         }
 
-        //public string Name { get; set; }
+        public string Name { get; set; }
 
-        //public List<Welt> Welten = new List<Welt>();
+        public List<Welt> Welten = new List<Welt>();
 
         
     }

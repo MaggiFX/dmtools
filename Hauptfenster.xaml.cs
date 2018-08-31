@@ -15,8 +15,6 @@ using System.Windows.Shapes;
 using Newtonsoft.Json;
 using System.Data.SQLite;
 using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
 
 namespace dmtools
 {
@@ -43,7 +41,7 @@ namespace dmtools
 
         private void Demo()
         {
-            var testabenteuer   = new Abenteuer ();
+            var testabenteuer   = new Abenteuer ("WoW");
             var testwelt        = new Welt      ("Azeroth");
             var testwelt2       = new Welt      ("Draenor");
             var testkontinent   = new Kontinent ("Kalimdor");
@@ -55,14 +53,17 @@ namespace dmtools
             testland.Städte.Add(teststadt);
             testkontinent.Länder.Add(testland);
             testwelt.Kontinente.Add(testkontinent);
-            //testabenteuer.Welten.Add(testwelt);
-            //testabenteuer.Welten.Add(testwelt2);
+            testabenteuer.Welten.Add(testwelt);
+            testabenteuer.Welten.Add(testwelt2);
 
-            XmlSerializer ser = new XmlSerializer(typeof(Abenteuer));
+            JsonSerializer jser = new JsonSerializer();
+            jser.NullValueHandling = NullValueHandling.Ignore;
 
-            TextWriter writer = new StreamWriter("hase.xml");
-            ser.Serialize(writer, testabenteuer);
-            writer.Close();
+            using (StreamWriter sw = new StreamWriter(@"test.json"))
+            using (JsonWriter writa = new JsonTextWriter(sw))
+            {
+                jser.Serialize(writa, testabenteuer);
+            }
 
         }
     }
