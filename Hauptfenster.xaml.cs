@@ -12,9 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Newtonsoft.Json;
-using System.Data.SQLite;
 using System.IO;
+using Newtonsoft.Json;
+using MongoDB.Bson;
+using MongoDB.Driver;
 
 namespace dmtools
 {
@@ -27,6 +28,7 @@ namespace dmtools
             //LadeAbenteuer();
             //NeuesAbenteuer();
             Demo();
+            MongoDatenbank();
         }
 
         private void LadeAbenteuer()
@@ -65,6 +67,20 @@ namespace dmtools
                 jser.Serialize(writa, testabenteuer);
             }
 
+        }
+
+        private void MongoDatenbank()
+        {
+            var client = new MongoClient("mongodb://localhost:27017/ItemDB");
+            var db = client.GetDatabase("items");
+
+            var itemCollection = db.GetCollection<Item>("Items", null);
+
+            db.DropCollection("items");
+
+            Item hanswurst = new Item("Hans Wurst");
+
+            itemCollection.InsertOne(hanswurst);
         }
     }
 }

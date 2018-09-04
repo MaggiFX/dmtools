@@ -4,10 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dmtools.Klassen.Items
+namespace dmtools
 {
     class Item
     {
+        public string Name { get; set; }
+
+        public Item(string name)
+        {
+            Name = name;
+        }
 
     }
 }
