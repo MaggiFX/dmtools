@@ -43,13 +43,13 @@ namespace dmtools
 
         private void Demo()
         {
-            var testabenteuer   = new Abenteuer ("WoW");
-            var testwelt        = new Welt      ("Azeroth");
-            var testwelt2       = new Welt      ("Draenor");
-            var testkontinent   = new Kontinent ("Kalimdor");
-            var testland        = new Land      ("Durotan");
-            var teststadt       = new Stadt     ("Ogrimmar");
-            var testpoi         = new Poi       ("Ragefire Chasm");
+            var testabenteuer = new Abenteuer("WoW");
+            var testwelt = new Welt("Azeroth");
+            var testwelt2 = new Welt("Draenor");
+            var testkontinent = new Kontinent("Kalimdor");
+            var testland = new Land("Durotan");
+            var teststadt = new Stadt("Ogrimmar");
+            var testpoi = new Poi("Ragefire Chasm");
 
             teststadt.POIS.Add(testpoi);
             testland.Städte.Add(teststadt);
@@ -71,16 +71,15 @@ namespace dmtools
 
         private void MongoDatenbank()
         {
-            var client = new MongoClient("mongodb://localhost:27017/ItemDB");
-            var db = client.GetDatabase("items");
-
-            var itemCollection = db.GetCollection<Item>("Items", null);
+            var client = new MongoClient();
+            var db = client.GetDatabase("itemdb");
+            var itemCollection = db.GetCollection<Item>("items", null);
 
             db.DropCollection("items");
 
             Item hanswurst = new Item("Hans Wurst");
 
-            itemCollection.InsertOne(hanswurst);
+        itemCollection.InsertOne(hanswurst);
         }
-    }
+}
 }
