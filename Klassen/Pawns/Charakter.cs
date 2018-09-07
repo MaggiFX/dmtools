@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace dmtools.Klassen
 {
-    class Charakter:Pawn
+    class Charakter
     {
     }
 }

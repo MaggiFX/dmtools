@@ -10,7 +10,14 @@
         Width="800">
     <Grid>
         <TabControl Margin="10,10,10,9">
-            <TabItem Header="Admin"/>
+            <TabItem Header="Admin">
+                <Grid>
+                    <Button Content="Neues Item" Margin="10,10,631,318"/>
+
+                    <Button Content="Button" Margin="10,59,631,269"/>
+                </Grid>
+            </TabItem>
+
             <TabItem Header="Spieler">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>

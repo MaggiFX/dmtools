@@ -28,7 +28,7 @@ namespace dmtools
             //LadeAbenteuer();
             //NeuesAbenteuer();
             Demo();
-            MongoDatenbank();
+            //MongoDatenbank();
         }
 
         private void LadeAbenteuer()

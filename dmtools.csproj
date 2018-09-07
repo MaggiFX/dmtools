@@ -88,6 +88,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Itemerstellung.xaml.cs">
+      <DependentUpon>Itemerstellung.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Klassen\Abenteuer.cs" />
     <Compile Include="Klassen\Items\Item.cs" />
     <Compile Include="Klassen\Items\Waffe.cs" />
@@ -98,12 +101,15 @@
     <Compile Include="Klassen\Orte\Welt.cs" />
     <Compile Include="Klassen\Wissen\Partei.cs" />
     <Compile Include="Klassen\Pawns\Charakter.cs" />
-    <Compile Include="Klassen\Pawns\Pawn.cs" />
     <Compile Include="Klassen\Pawns\SpielerCharakter.cs" />
     <Compile Include="Hauptfenster.xaml.cs">
       <DependentUpon>Hauptfenster.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Itemerstellung.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Klassen\Wissen\Notiz.cs" />
