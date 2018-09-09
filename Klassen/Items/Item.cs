@@ -10,6 +10,11 @@ namespace dmtools
     {
         public string Name { get; set; }
 
+        public Item()
+        {
+            Name = "Basic";
+        }
+
         public Item(string name)
         {
             Name = name;

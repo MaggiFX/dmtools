@@ -19,11 +19,30 @@ using MongoDB.Driver;
 
 namespace dmtools
 {
+    static class MyThing
+    {
+        public static List<Item> ItemListe;
+
+        static MyThing()
+        {
+            ItemListe = new List<Item>();
+        }
+
+        
+
+        public static void Hinzufügen(Item rein)
+        {
+            ItemListe.Add(rein);
+        }
+    }
 
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
+            Item affe = new Item("Test");
+
             InitializeComponent();
             //LadeAbenteuer();
             //NeuesAbenteuer();
@@ -73,14 +92,26 @@ namespace dmtools
         {
             MongoClient dbClient = new MongoClient("mongodb://127.0.0.1:27017");
 
-            var dbList = dbClient.ListDatabases().ToList();
-            Console.WriteLine("List DB:");
-            foreach (var item in dbList)
-            {
-                Console.WriteLine(item);
-            }
+            IMongoDatabase db = dbClient.GetDatabase("waffen");
 
+
+            
 
         }
-}
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Itemerstellung fenster = new Itemerstellung();
+
+            
+
+            fenster.Show();
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.ItemBox.ItemsSource = MyThing.ItemListe;
+        }
+    }
 }

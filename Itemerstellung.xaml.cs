@@ -23,5 +23,21 @@ namespace dmtools
         {
             InitializeComponent();
         }
+
+        private void Abbrechen_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Erstellen_Click(object sender, RoutedEventArgs e)
+        {
+            MyThing.ItemListe.Add(new Item("Test"));
+
+            //this.TB_ItemName.Text
+
+            
+
+            this.Close();
+        }
     }
 }
