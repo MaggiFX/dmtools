@@ -28,7 +28,7 @@ namespace dmtools
             //LadeAbenteuer();
             //NeuesAbenteuer();
             Demo();
-            //MongoDatenbank();
+            MongoDatenbank();
         }
 
         private void LadeAbenteuer()
@@ -71,15 +71,16 @@ namespace dmtools
 
         private void MongoDatenbank()
         {
-            var client = new MongoClient();
-            var db = client.GetDatabase("itemdb");
-            var itemCollection = db.GetCollection<Item>("items", null);
+            MongoClient dbClient = new MongoClient("mongodb://127.0.0.1:27017");
 
-            db.DropCollection("items");
+            var dbList = dbClient.ListDatabases().ToList();
+            Console.WriteLine("List DB:");
+            foreach (var item in dbList)
+            {
+                Console.WriteLine(item);
+            }
 
-            Item hanswurst = new Item("Hans Wurst");
 
-        itemCollection.InsertOne(hanswurst);
         }
 }
 }
