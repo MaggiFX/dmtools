@@ -31,11 +31,7 @@ namespace dmtools
 
         private void Erstellen_Click(object sender, RoutedEventArgs e)
         {
-            MyThing.ItemListe.Add(new Item("Test"));
-
-            //this.TB_ItemName.Text
-
-            
+            Datenbank.ItemListe.Add(new Item("Test"));
 
             this.Close();
         }

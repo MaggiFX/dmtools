@@ -13,27 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
-using Newtonsoft.Json;
-using MongoDB.Bson;
-using MongoDB.Driver;
+//using Newtonsoft.Json;
+using LiteDB;
 
 namespace dmtools
 {
-    static class MyThing
+    static class Datenbank
     {
-        public static List<Item> ItemListe;
-
-        static MyThing()
-        {
-            ItemListe = new List<Item>();
-        }
-
         
-
-        public static void Hinzufügen(Item rein)
-        {
-            ItemListe.Add(rein);
-        }
     }
 
     public partial class MainWindow : Window
@@ -76,26 +63,10 @@ namespace dmtools
             testwelt.Kontinente.Add(testkontinent);
             testabenteuer.Welten.Add(testwelt);
             testabenteuer.Welten.Add(testwelt2);
-
-            JsonSerializer jser = new JsonSerializer();
-            jser.NullValueHandling = NullValueHandling.Ignore;
-
-            using (StreamWriter sw = new StreamWriter(@"test.json"))
-            using (JsonWriter writa = new JsonTextWriter(sw))
-            {
-                jser.Serialize(writa, testabenteuer);
-            }
-
         }
 
         private void MongoDatenbank()
         {
-            MongoClient dbClient = new MongoClient("mongodb://127.0.0.1:27017");
-
-            IMongoDatabase db = dbClient.GetDatabase("waffen");
-
-
-            
 
         }
 
@@ -103,15 +74,12 @@ namespace dmtools
         {
             Itemerstellung fenster = new Itemerstellung();
 
-            
-
             fenster.Show();
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            this.ItemBox.ItemsSource = MyThing.ItemListe;
+            this.ItemBox.ItemsSource = Datenbank.ItemListe;
         }
     }
 }
