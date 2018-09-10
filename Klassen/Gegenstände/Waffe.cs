@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace dmtools
 {
-    class Waffe
+    class Waffe:Gegenstand
     {
-        public string Name;
-
-        public Waffe(string name)
-        {
-            Name = name;
-        }
     }
 }

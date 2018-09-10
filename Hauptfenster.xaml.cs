@@ -28,7 +28,7 @@ namespace dmtools
 
         public MainWindow()
         {
-            Item affe = new Item("Test");
+            Gegenstand affe = new Gegenstand("Test");
 
             InitializeComponent();
             //LadeAbenteuer();
@@ -72,14 +72,14 @@ namespace dmtools
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Itemerstellung fenster = new Itemerstellung();
+            ErstellungGegenstand fenster = new ErstellungGegenstand();
 
             fenster.Show();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            this.ItemBox.ItemsSource = Datenbank.ItemListe;
+            
         }
     }
 }

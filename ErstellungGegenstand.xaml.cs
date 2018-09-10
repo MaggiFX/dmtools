@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace dmtools
 {
     /// <summary>
-    /// Interaktionslogik für Itemerstellung.xaml
+    /// Interaktionslogik für ErstellungGegenstand.xaml
     /// </summary>
-    public partial class Itemerstellung : Window
+    public partial class ErstellungGegenstand : Window
     {
-        public Itemerstellung()
+        public ErstellungGegenstand()
         {
             InitializeComponent();
         }
@@ -31,7 +31,7 @@ namespace dmtools
 
         private void Erstellen_Click(object sender, RoutedEventArgs e)
         {
-            Datenbank.ItemListe.Add(new Item("Test"));
+            
 
             this.Close();
         }

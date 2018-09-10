@@ -72,12 +72,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Itemerstellung.xaml.cs">
-      <DependentUpon>Itemerstellung.xaml</DependentUpon>
+    <Compile Include="ErstellungGegenstand.xaml.cs">
+      <DependentUpon>ErstellungGegenstand.xaml</DependentUpon>
     </Compile>
     <Compile Include="Klassen\Abenteuer.cs" />
-    <Compile Include="Klassen\Items\Item.cs" />
-    <Compile Include="Klassen\Items\Waffe.cs" />
+    <Compile Include="Klassen\Gegenstände\Gegenstand.cs" />
+    <Compile Include="Klassen\Gegenstände\Waffe.cs" />
     <Compile Include="Klassen\Orte\Kontinent.cs" />
     <Compile Include="Klassen\Orte\Land.cs" />
     <Compile Include="Klassen\Orte\Poi.cs" />
@@ -90,7 +90,7 @@
       <DependentUpon>Hauptfenster.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Itemerstellung.xaml">
+    <Page Include="ErstellungGegenstand.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

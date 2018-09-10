@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace dmtools
 {
-    class Item
+    class Gegenstand
     {
         public string Name { get; set; }
 
-        public Item()
+        public Gegenstand()
         {
             Name = "Basic";
         }
 
-        public Item(string name)
+        public Gegenstand(string name)
         {
             Name = name;
         }

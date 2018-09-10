@@ -13,7 +13,7 @@
         <TabControl Margin="10,10,10,9">
             <TabItem Header="Admin">
                 <Grid>
-                    <Button Content="Neues Item" Margin="10,10,631,318" Click="Button_Click"/>
+                    <Button Content="Neuer Gegenstand" Margin="10,10,631,318" Click="Button_Click"/>
 
                     <Button Content="Button" Margin="10,59,631,269" Click="Button_Click_1"/>
                     <ListBox x:Name="ItemBox" Margin="10,108,631,10">
