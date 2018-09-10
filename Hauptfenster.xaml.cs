@@ -26,9 +26,7 @@ namespace dmtools
             {
                 var gegenstände = db.GetCollection<Gegenstand>("gegenstände");
 
-                var prüfung = gegenstände.Find(Query.EQ("Name", input.Name));
-
-                if (prüfung.Any())
+                if (gegenstände.Find(Query.EQ("Name", input.Name)).Any())
                 {
                     var err = MessageBox.Show("Itemname bereits vergeben");
                 }
@@ -36,20 +34,8 @@ namespace dmtools
                 {
                     gegenstände.Insert(input);
                 }
-
-                
             }
         }
-
-        public static void AddWaffe(Waffe input)
-        {
-            using (var db = new LiteDatabase(@"Datenbank.db"))
-            {
-                var waffen = db.GetCollection<Waffe>("waffen");
-                waffen.Insert(input);
-            }
-        }
-
     }
 
     public partial class MainWindow : Window
@@ -57,51 +43,7 @@ namespace dmtools
 
         public MainWindow()
         {
-            Gegenstand affe = new Gegenstand("Test");
-
             InitializeComponent();
-            //LadeAbenteuer();
-            //NeuesAbenteuer();
-            Demo();
-            
-        }
-
-        private void LadeAbenteuer()
-        {
-
-        }
-
-        private void NeuesAbenteuer()
-        {
-
-        }
-
-        private void Demo()
-        {
-
-            Waffe item1 = new Waffe("Arcanite Reaper");
-            Waffe item2 = new Waffe("Frostmourne");
-            Gegenstand item3 = new Gegenstand("Doomhammer");
-            Waffe item4 = new Waffe("Ashbringer");
-            Gegenstand item5 = new Gegenstand("Atiesh");
-
-            Datenbank.AddGegenstand(item1);
-
-
-            var testabenteuer = new Abenteuer("WoW");
-            var testwelt = new Welt("Azeroth");
-            var testwelt2 = new Welt("Draenor");
-            var testkontinent = new Kontinent("Kalimdor");
-            var testland = new Land("Durotan");
-            var teststadt = new Stadt("Ogrimmar");
-            var testpoi = new Poi("Ragefire Chasm");
-
-            teststadt.POIS.Add(testpoi);
-            testland.Städte.Add(teststadt);
-            testkontinent.Länder.Add(testland);
-            testwelt.Kontinente.Add(testkontinent);
-            testabenteuer.Welten.Add(testwelt);
-            testabenteuer.Welten.Add(testwelt2);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

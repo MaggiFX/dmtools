@@ -19,6 +19,8 @@ namespace dmtools
     /// </summary>
     public partial class ErstellungGegenstand : Window
     {
+        enum seltenheit { a = 1, b, c }
+
         public ErstellungGegenstand()
         {
             InitializeComponent();
@@ -31,7 +33,15 @@ namespace dmtools
 
         private void Erstellen_Click(object sender, RoutedEventArgs e)
         {
-            
+            Gegenstand neu = new Gegenstand();
+
+
+            neu.Name = TB_Name.Text;
+            neu.Wert = Convert.ToInt32(TB_Wert.Text);
+            neu.Gewicht = Convert.ToDouble(TB_Gewicht.Text);
+            neu.Seltenheit = Convert.ToInt32(SB_Seltenheit.Text);
+
+            Datenbank.AddGegenstand(neu);
 
             this.Close();
         }
