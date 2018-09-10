@@ -20,7 +20,36 @@ namespace dmtools
 {
     static class Datenbank
     {
-        
+        public static void AddGegenstand(Gegenstand input)
+        {
+            using (var db = new LiteDatabase(@"Datenbank.db"))
+            {
+                var gegenstände = db.GetCollection<Gegenstand>("gegenstände");
+
+                var prüfung = gegenstände.Find(Query.EQ("Name", input.Name));
+
+                if (prüfung.Any())
+                {
+                    var err = MessageBox.Show("Itemname bereits vergeben");
+                }
+                else
+                {
+                    gegenstände.Insert(input);
+                }
+
+                
+            }
+        }
+
+        public static void AddWaffe(Waffe input)
+        {
+            using (var db = new LiteDatabase(@"Datenbank.db"))
+            {
+                var waffen = db.GetCollection<Waffe>("waffen");
+                waffen.Insert(input);
+            }
+        }
+
     }
 
     public partial class MainWindow : Window
@@ -34,7 +63,7 @@ namespace dmtools
             //LadeAbenteuer();
             //NeuesAbenteuer();
             Demo();
-            MongoDatenbank();
+            
         }
 
         private void LadeAbenteuer()
@@ -49,6 +78,16 @@ namespace dmtools
 
         private void Demo()
         {
+
+            Waffe item1 = new Waffe("Arcanite Reaper");
+            Waffe item2 = new Waffe("Frostmourne");
+            Gegenstand item3 = new Gegenstand("Doomhammer");
+            Waffe item4 = new Waffe("Ashbringer");
+            Gegenstand item5 = new Gegenstand("Atiesh");
+
+            Datenbank.AddGegenstand(item1);
+
+
             var testabenteuer = new Abenteuer("WoW");
             var testwelt = new Welt("Azeroth");
             var testwelt2 = new Welt("Draenor");
@@ -63,11 +102,6 @@ namespace dmtools
             testwelt.Kontinente.Add(testkontinent);
             testabenteuer.Welten.Add(testwelt);
             testabenteuer.Welten.Add(testwelt2);
-        }
-
-        private void MongoDatenbank()
-        {
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

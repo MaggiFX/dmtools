@@ -8,6 +8,7 @@ namespace dmtools
 {
     class Gegenstand
     {
+        public int Id { get; set; }
         public string Name { get; set; }
 
         public Gegenstand()
