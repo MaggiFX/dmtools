@@ -64,7 +64,7 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="Hauptfenster.xaml">
+    <Page Include="Fenster\Hauptfenster.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -72,7 +72,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ErstellungGegenstand.xaml.cs">
+    <Compile Include="Fenster\ErstellungGegenstand.xaml.cs">
       <DependentUpon>ErstellungGegenstand.xaml</DependentUpon>
     </Compile>
     <Compile Include="Klassen\Abenteuer.cs" />
@@ -85,11 +85,11 @@
     <Compile Include="Klassen\Wissen\Partei.cs" />
     <Compile Include="Klassen\Pawns\Charakter.cs" />
     <Compile Include="Klassen\Pawns\SpielerCharakter.cs" />
-    <Compile Include="Hauptfenster.xaml.cs">
+    <Compile Include="Fenster\Hauptfenster.xaml.cs">
       <DependentUpon>Hauptfenster.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ErstellungGegenstand.xaml">
+    <Page Include="Fenster\ErstellungGegenstand.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

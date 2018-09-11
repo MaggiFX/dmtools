@@ -1,0 +1,51 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dmtools"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="dmtools.MainWindow"
+        mc:Ignorable="d"
+        Title="Hauptfenster"
+        Height="450"
+        Width="800">
+    <Grid>
+        <TabControl Margin="10,10,10,10">
+            <TabItem Header="Admin">
+                <Grid>
+                    <Button Content="Neuer Gegenstand" Margin="10,10,631,318" Click="Button_Click"/>
+
+                    <Button Content="Button" Margin="10,59,631,269" Click="Button_Click_1"/>
+                    <ListBox x:Name="ItemBox" Margin="10,108,631,10"></ListBox>
+
+                    <RichTextBox x:Name="TestTEXT" Margin="140,10,302,269"></RichTextBox>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Gegenstände">
+                <Grid>
+                    <Button Content="Suchen" Margin="10,10,672,330" Click="SucheGegenstand"></Button>
+
+                    <Label Margin="125,10,585,330">Name</Label>
+
+                    <TextBox x:Name="SuchName" Margin="186,10,472,330"></TextBox>
+
+                    <ListView x:Name="ErgebnisseGegenstand" Margin="10,50,10,10">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Id" Width="40" DisplayMemberBinding="{Binding Id}"/>
+                                <GridViewColumn Header="Name" Width="250" DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Header="Wert" Width="80" DisplayMemberBinding="{Binding Wert}"/>
+                                <GridViewColumn Header="Gewicht" Width="80" DisplayMemberBinding="{Binding Gewicht}"/>
+                                <GridViewColumn Header="Seltenheit" Width="80" DisplayMemberBinding="{Binding Seltenheit}"/>
+                                <GridViewColumn Header="Beschreibung" DisplayMemberBinding="{Binding Beschreibung}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+
+    </Grid>
+</Window>
