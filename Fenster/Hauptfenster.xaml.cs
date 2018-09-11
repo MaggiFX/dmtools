@@ -71,34 +71,63 @@ namespace dmtools
         {
             ErgebnisseGegenstand.Items.Clear();
 
-            if(SuchName.Text.Length == 0)
+            string suchName;
+            int suchMinWert;
+            int suchMaxWert;
+
+            if (SuchName.Text.Length == 0)
             {
-                
+                suchName = "";
             }
             else
             {
-                using (var db = new LiteDatabase(@"Datenbank.db"))
+                suchName = SuchName.Text;
+            }
+
+            if (SuchMinWert.Text.Length == 0)
+            {
+                suchMinWert = 0;
+            }
+            else
+            {
+                suchMinWert = Convert.ToInt32(SuchMinWert.Text);
+            }
+
+            if (SuchMaxWert.Text.Length == 0)
+            {
+                suchMaxWert = Int32.MaxValue;
+            }
+            else
+            {
+                suchMaxWert = Convert.ToInt32(SuchMaxWert.Text);
+            }
+
+
+            using (var db = new LiteDatabase(@"Datenbank.db"))
+            {
+                var gegenstände = db.GetCollection<Gegenstand>("gegenstände");
+
+                var xord = gegenstände.Find(
+                    x =>
+                    (x.Name.Contains(suchName.ToLower()) 
+                    
+                    || x.Name.Contains(suchName.Substring(0, 1).ToUpper() + suchName.Substring(1)))
+                    
+                    && x.Wert >= suchMinWert
+                    && x.Wert <= suchMaxWert
+                    );
+
+
+                foreach (var i in xord)
                 {
-                    var gegenstände = db.GetCollection<Gegenstand>("gegenstände");
-
-                    var r = gegenstände.Find(Query.Or(
-                    Query.Contains("Name", SuchName.Text.ToLower()),
-                    Query.Contains("Name", SuchName.Text.Substring(0, 1).ToUpper() + SuchName.Text.Substring(1))
-                    ));
-
-                    //var result = gegenstände.Find(Query.Contains("Name", SuchName.Text));
-
-                    foreach (var i in r)
+                    ErgebnisseGegenstand.Items.Add(new Gegenstand
                     {
-                        ErgebnisseGegenstand.Items.Add(new Gegenstand
-                        {
-                            Name = i.Name,
-                            Wert = i.Wert,
-                            Gewicht = i.Gewicht,
-                            Seltenheit = i.Seltenheit,
-                            Beschreibung = i.Beschreibung
-                        });
-                    }
+                        Name = i.Name,
+                        Wert = i.Wert,
+                        Gewicht = i.Gewicht,
+                        Seltenheit = i.Seltenheit,
+                        Beschreibung = i.Beschreibung
+                    });
                 }
             }
         }

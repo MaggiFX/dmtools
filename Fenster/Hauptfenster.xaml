@@ -26,9 +26,12 @@
                 <Grid>
                     <Button Content="Suchen" Margin="10,10,672,330" Click="SucheGegenstand"></Button>
 
-                    <Label Margin="125,10,585,330">Name</Label>
-
-                    <TextBox x:Name="SuchName" Margin="186,10,472,330"></TextBox>
+                    <Label Margin="99,10,622,330">Name</Label>
+                    <TextBox x:Name="SuchName" Margin="144,10,556,330"></TextBox>
+                    <Label Margin="217,10,504,330" Content="min $"/>
+                    <TextBox x:Name="SuchMinWert" Margin="262,10,438,330"/>
+                    <Label Margin="337,10,384,330" Content="max $"/>
+                    <TextBox x:Name="SuchMaxWert" Margin="382,10,318,330"/>
 
                     <ListView x:Name="ErgebnisseGegenstand" Margin="10,50,10,10">
                         <ListView.View>
@@ -42,6 +45,7 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
+                    
                 </Grid>
             </TabItem>
 
