@@ -107,18 +107,15 @@ namespace dmtools
             {
                 var gegenstände = db.GetCollection<Gegenstand>("gegenstände");
 
-                var xord = gegenstände.Find(
-                    x =>
-                    (x.Name.Contains(suchName.ToLower()) 
-                    
-                    || x.Name.Contains(suchName.Substring(0, 1).ToUpper() + suchName.Substring(1)))
-                    
+                var suchquery = gegenstände.Find(
+                    x => (x.Name ?? string.Empty).ToLower().Contains((suchName ?? string.Empty).ToLower())
                     && x.Wert >= suchMinWert
                     && x.Wert <= suchMaxWert
                     );
 
 
-                foreach (var i in xord)
+
+                foreach (var i in suchquery)
                 {
                     ErgebnisseGegenstand.Items.Add(new Gegenstand
                     {
