@@ -71,36 +71,19 @@ namespace dmtools
         {
             ErgebnisseGegenstand.Items.Clear();
 
-            string suchName;
+            string suchName = SuchName.Text;
             int suchMinWert;
             int suchMaxWert;
 
-            if (SuchName.Text.Length == 0)
-            {
-                suchName = "";
-            }
-            else
-            {
-                suchName = SuchName.Text;
-            }
-
             if (SuchMinWert.Text.Length == 0)
-            {
                 suchMinWert = 0;
-            }
             else
-            {
                 suchMinWert = Convert.ToInt32(SuchMinWert.Text);
-            }
 
             if (SuchMaxWert.Text.Length == 0)
-            {
                 suchMaxWert = Int32.MaxValue;
-            }
             else
-            {
                 suchMaxWert = Convert.ToInt32(SuchMaxWert.Text);
-            }
 
 
             using (var db = new LiteDatabase(@"Datenbank.db"))

@@ -13,6 +13,8 @@
         <TextBox x:Name="TB_Name" HorizontalAlignment="Left" Height="23" Margin="119,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254"/>
         <TextBox x:Name="TB_Wert" HorizontalAlignment="Left" Height="23" Margin="119,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254"/>
         <TextBox x:Name="TB_Gewicht" HorizontalAlignment="Left" Height="23" Margin="119,69,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254"/>
+        <RichTextBox x:Name="TB_Beschreibung" HorizontalAlignment="Left" Height="194" Margin="119,131,0,0" VerticalAlignment="Top" Width="254"/>
+
 
         <ComboBox x:Name="SB_Seltenheit" HorizontalAlignment="Left" Height="26" Margin="119,97,0,0" VerticalAlignment="Top" Width="254">
             <ComboBoxItem>Müll</ComboBoxItem>
@@ -31,6 +33,7 @@
         <Label Content="int - Wert in Kupfer" HorizontalAlignment="Left" Margin="378,46,0,0" VerticalAlignment="Top" Width="161"/>
         <Label Content="float - Gewicht in kg" HorizontalAlignment="Left" Margin="378,71,0,0" VerticalAlignment="Top" Width="127"/>
         <Label Content="Auswahl" HorizontalAlignment="Left" Margin="378,97,0,0" VerticalAlignment="Top" Width="127"/>
+        <Label Content="Beschreibung" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top" Width="104"/>
 
 
 

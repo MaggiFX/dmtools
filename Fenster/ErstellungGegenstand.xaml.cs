@@ -39,6 +39,7 @@ namespace dmtools
             neu.Wert = Convert.ToInt32(TB_Wert.Text);
             neu.Gewicht = Convert.ToDouble(TB_Gewicht.Text);
             neu.Seltenheit = SB_Seltenheit.Text;
+            neu.Beschreibung = new TextRange(TB_Beschreibung.Document.ContentStart, TB_Beschreibung.Document.ContentEnd).Text;
 
             Datenbank.AddGegenstand(neu);
 

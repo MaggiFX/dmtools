@@ -64,6 +64,10 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Fenster\ErstellungGegenstandJson.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Fenster\Hauptfenster.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -74,6 +78,9 @@
     </Compile>
     <Compile Include="Fenster\ErstellungGegenstand.xaml.cs">
       <DependentUpon>ErstellungGegenstand.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenster\ErstellungGegenstandJson.xaml.cs">
+      <DependentUpon>ErstellungGegenstandJson.xaml</DependentUpon>
     </Compile>
     <Compile Include="Klassen\Abenteuer.cs" />
     <Compile Include="Klassen\Gegenstände\Gegenstand.cs" />

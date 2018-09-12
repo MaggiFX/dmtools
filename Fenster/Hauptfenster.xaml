@@ -7,33 +7,39 @@
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="dmtools.MainWindow"
         mc:Ignorable="d"
         Title="Hauptfenster"
-        Height="450"
-        Width="800">
+        Height="900"
+        Width="1600">
     <Grid>
-        <TabControl Margin="10,10,10,10">
-            <TabItem Header="Admin">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="23*"/>
+            <ColumnDefinition Width="49*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Margin="10,10,10,10" Grid.ColumnSpan="2">
+            <TabItem Header="GM Tools">
                 <Grid>
-                    <Button Content="Neuer Gegenstand" Margin="10,10,631,318" Click="Button_Click"/>
 
-                    <Button Content="Button" Margin="10,59,631,269" Click="Button_Click_1"/>
-                    <ListBox x:Name="ItemBox" Margin="10,108,631,10"></ListBox>
-
-                    <RichTextBox x:Name="TestTEXT" Margin="140,10,302,269"></RichTextBox>
                 </Grid>
             </TabItem>
 
             <TabItem Header="Gegenstände">
                 <Grid>
-                    <Button Content="Suchen" Margin="10,10,672,330" Click="SucheGegenstand"></Button>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="101*"/>
+                        <RowDefinition Height="720*"/>
+                    </Grid.RowDefinitions>
 
-                    <Label Margin="99,10,622,330">Name</Label>
-                    <TextBox x:Name="SuchName" Margin="144,10,556,330"></TextBox>
-                    <Label Margin="217,10,504,330" Content="min $"/>
-                    <TextBox x:Name="SuchMinWert" Margin="262,10,438,330"/>
-                    <Label Margin="337,10,384,330" Content="max $"/>
-                    <TextBox x:Name="SuchMaxWert" Margin="382,10,318,330"/>
+                    <Button Content="Neu..." Margin="10,10,1479,63" Click="Button_Click"/>
+                    <Button Content="Import Json" Margin="10,46,1479,27" Click="Button_Click"/>
+                    <Button Content="Suchen" Margin="102,10,1404,63" Click="SucheGegenstand" Width="60" Height="28"></Button>
 
-                    <ListView x:Name="ErgebnisseGegenstand" Margin="10,50,10,10">
+                    <Label Margin="167,10,1355,63">Name</Label>
+                    <TextBox x:Name="SuchName" Margin="211,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="28"></TextBox>
+                    <Label Margin="376,10,1130,63" Content="Min-Wert"/>
+                    <TextBox x:Name="SuchMinWert" Margin="436,10,1070,63" Width="60" Height="28"/>
+                    <Label Margin="501,10,1003,63" Content="Max-Wert"/>
+                    <TextBox x:Name="SuchMaxWert" Margin="563,10,943,63" Width="60" Height="28"/>
+
+                    <ListView x:Name="ErgebnisseGegenstand" Margin="100,46,10,10" Grid.RowSpan="2">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Id" Width="40" DisplayMemberBinding="{Binding Id}"/>
@@ -46,6 +52,7 @@
                         </ListView.View>
                     </ListView>
                     
+
                 </Grid>
             </TabItem>
 
