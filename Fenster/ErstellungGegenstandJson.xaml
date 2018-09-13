@@ -1,14 +1,14 @@
-﻿<Window x:Class="dmtools.Fenster.ErstellungGegenstandJson"
+﻿<Window x:Class="dmtools.ErstellungGegenstandJson"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:dmtools.Fenster"
+        xmlns:local="clr-namespace:dmtools"
         mc:Ignorable="d"
         Title="ErstellungGegenstandJson" Height="450" Width="800">
     <Grid>
-        <Button Content="Abbrechen" HorizontalAlignment="Left" Margin="707,389,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Erstellen" HorizontalAlignment="Left" Margin="627,389,0,0" VerticalAlignment="Top" Width="75"/>
-        <TextBox HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="612"/>
+        <Button Content="Abbrechen" HorizontalAlignment="Left" Margin="707,389,0,0" VerticalAlignment="Top" Width="75" Click="Btn_Abbrechen"/>
+        <Button Content="Erstellen" HorizontalAlignment="Left" Margin="627,389,0,0" VerticalAlignment="Top" Width="75" Click="Btn_Erstellen"/>
+        <TextBox x:Name="JsonBox" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="612"/>
     </Grid>
 </Window>

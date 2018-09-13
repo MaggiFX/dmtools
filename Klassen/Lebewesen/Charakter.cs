@@ -8,5 +8,6 @@ namespace dmtools.Klassen
 {
     class Charakter
     {
+        public Geld geld;
     }
 }

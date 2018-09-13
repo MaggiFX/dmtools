@@ -89,9 +89,10 @@
     <Compile Include="Klassen\Orte\Poi.cs" />
     <Compile Include="Klassen\Orte\Stadt.cs" />
     <Compile Include="Klassen\Orte\Welt.cs" />
+    <Compile Include="Klassen\Systeme\Geld.cs" />
     <Compile Include="Klassen\Wissen\Partei.cs" />
-    <Compile Include="Klassen\Pawns\Charakter.cs" />
-    <Compile Include="Klassen\Pawns\SpielerCharakter.cs" />
+    <Compile Include="Klassen\Lebewesen\Charakter.cs" />
+    <Compile Include="Klassen\Lebewesen\SpielerCharakter.cs" />
     <Compile Include="Fenster\Hauptfenster.xaml.cs">
       <DependentUpon>Hauptfenster.xaml</DependentUpon>
       <SubType>Code</SubType>

@@ -18,8 +18,6 @@ using LiteDB;
 
 namespace dmtools
 {
-    
-
     static class Datenbank
     {
         public static void AddGegenstand(Gegenstand input)
@@ -46,25 +44,18 @@ namespace dmtools
         public MainWindow()
         {
             InitializeComponent();
-
-            TESTING();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Btn_NeuerGegenstand(object sender, RoutedEventArgs e)
         {
             ErstellungGegenstand fenster = new ErstellungGegenstand();
-
             fenster.Show();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Btn_NeuerGegenstandJson(object sender, RoutedEventArgs e)
         {
-            
-        }
-
-        private void TESTING()
-        {
-
+            ErstellungGegenstandJson fenster = new ErstellungGegenstandJson();
+            fenster.Show();
         }
 
         private void SucheGegenstand(object sender, RoutedEventArgs e)

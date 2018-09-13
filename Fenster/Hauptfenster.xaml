@@ -28,8 +28,8 @@
                         <RowDefinition Height="720*"/>
                     </Grid.RowDefinitions>
 
-                    <Button Content="Neu..." Margin="10,10,1479,63" Click="Button_Click"/>
-                    <Button Content="Import Json" Margin="10,46,1479,27" Click="Button_Click"/>
+                    <Button Content="Neu..." Margin="10,10,1479,63" Click="Btn_NeuerGegenstand"/>
+                    <Button Content="Import Json" Margin="10,46,1479,27" Click="Btn_NeuerGegenstandJson"/>
                     <Button Content="Suchen" Margin="102,10,1404,63" Click="SucheGegenstand" Width="60" Height="28"></Button>
 
                     <Label Margin="167,10,1355,63">Name</Label>
