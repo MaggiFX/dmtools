@@ -58,6 +58,12 @@ namespace dmtools
             fenster.Show();
         }
 
+        private void Btn_NeuerOrt(object sender, RoutedEventArgs e)
+        {
+            ErstellungOrt fenster = new ErstellungOrt();
+            fenster.Show();
+        }
+
         private void SucheGegenstand(object sender, RoutedEventArgs e)
         {
             ErgebnisseGegenstand.Items.Clear();

@@ -31,14 +31,13 @@ namespace dmtools
 
             using (JsonTextReader reader = new JsonTextReader(new StringReader(JsonBox.Text)))
             {
-                var a = reader.TokenType;
-                var b = reader.Value;
+
             }
 
 
 
 
-            //this.Close();
+            this.Close();
         }
 
         private void Btn_Abbrechen(object sender, RoutedEventArgs e)
