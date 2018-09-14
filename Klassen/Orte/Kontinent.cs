@@ -9,8 +9,9 @@ namespace dmtools
     public class Kontinent
     {
         public string Name { get; set; }
+        public string Beschreibung { get; set; }
+        public Welt Anker { get; set; }
 
-        public List<Land> Länder = new List<Land>();
 
         public Kontinent(string name)
         {

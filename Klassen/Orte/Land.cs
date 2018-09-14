@@ -9,8 +9,8 @@ namespace dmtools
     public class Land
     {
         public string Name { get; set; }
-
-        public List<Stadt> Städte = new List<Stadt>();
+        public string Beschreibung { get; set; }
+        public Kontinent Anker { get; set; }
 
         public Land(string name)
         {

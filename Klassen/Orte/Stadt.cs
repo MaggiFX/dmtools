@@ -9,8 +9,9 @@ namespace dmtools
     public class Stadt
     {
         public string Name { get; set; }
+        public string Beschreibung { get; set; }
+        public Land Anker { get; set;}
 
-        public List<Poi> POIS = new List<Poi>();
 
         public Stadt(string name)
         {
