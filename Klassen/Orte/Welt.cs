@@ -9,6 +9,7 @@ namespace dmtools
     public class Welt
     {
         public string Name { get; set; }
+        public string Beschreibung { get; set; }
 
         public Welt(string name)
         {
