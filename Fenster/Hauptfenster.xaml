@@ -86,10 +86,10 @@
                     </TreeView>
 
                     <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="260 10 10 10">Ortsname</Label>
-                    <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="260 40 10 0"></TextBox>
+                    <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="260 40 10 0" Height="20"></TextBox>
 
-                    <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="260 80">Beschreibung</Label>
-                    <RichTextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="260 110 10 0"></RichTextBox>
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="260 70 10 10">Beschreibung</Label>
+                    <RichTextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="260 100 10 10"></RichTextBox>
                     
                 </Grid>
             </TabItem>

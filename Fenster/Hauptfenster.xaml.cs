@@ -82,7 +82,6 @@ namespace dmtools
             else
                 suchMaxWert = Convert.ToInt32(SuchMaxWert.Text);
 
-
             using (var db = new LiteDatabase(@"Datenbank.db"))
             {
                 var gegenstände = db.GetCollection<Gegenstand>("gegenstände");
@@ -92,8 +91,6 @@ namespace dmtools
                     && x.Wert >= suchMinWert
                     && x.Wert <= suchMaxWert
                     );
-
-
 
                 foreach (var i in suchquery)
                 {
