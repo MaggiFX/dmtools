@@ -89,7 +89,7 @@
     <Compile Include="Fenster\ErstellungOrt.xaml.cs">
       <DependentUpon>ErstellungOrt.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Klassen\Abenteuer.cs" />
+    <Compile Include="Klassen\Datenbank.cs" />
     <Compile Include="Klassen\Gegenstände\Gegenstand.cs" />
     <Compile Include="Klassen\Orte\Kontinent.cs" />
     <Compile Include="Klassen\Orte\Land.cs" />

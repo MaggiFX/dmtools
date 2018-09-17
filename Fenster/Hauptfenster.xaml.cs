@@ -18,32 +18,20 @@ using LiteDB;
 
 namespace dmtools
 {
-    static class Datenbank
-    {
-        public static void AddGegenstand(Gegenstand input)
-        {
-            using (var db = new LiteDatabase(@"Datenbank.db"))
-            {
-                var gegenstände = db.GetCollection<Gegenstand>("gegenstände");
-
-                if (gegenstände.Find(Query.Contains("Name", input.Name.ToLower())).Any())
-                {
-                    var err = MessageBox.Show("Itemname bereits vergeben");
-                }
-                else
-                {
-                    gegenstände.Insert(input);
-                }
-            }
-        }
-    }
-
     public partial class MainWindow : Window
     {
-
         public MainWindow()
         {
             InitializeComponent();
+            Demo();
+        }
+
+        public void Demo()
+        {
+            using (var db = new LiteDatabase(@"Datenbank.db"))
+            {
+                var gegenstände = db.GetCollection<Gegenstand>("orte");
+            }
         }
 
         private void Btn_NeuerGegenstand(object sender, RoutedEventArgs e)
