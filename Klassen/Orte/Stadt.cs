@@ -10,8 +10,15 @@ namespace dmtools
     {
         public string Name { get; set; }
         public string Beschreibung { get; set; }
-        public Land Anker { get; set;}
+        //public Land Anker { get; set;}
 
+        public List<Poi> PoiListe = new List<Poi>();
+
+
+        public Stadt()
+        {
+            Name = "Stadt";
+        }
 
         public Stadt(string name)
         {

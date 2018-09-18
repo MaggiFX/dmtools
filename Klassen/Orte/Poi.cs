@@ -10,7 +10,12 @@ namespace dmtools
     {
         public string Name { get; set; }
         public string Beschreibung { get; set; }
-        public Stadt Anker { get; set; }
+        //public Stadt Anker { get; set; }
+
+        public Poi()
+        {
+            Name = "POI";
+        }
 
         public Poi(string name)
         {

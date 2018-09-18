@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
-//using Newtonsoft.Json;
+using Newtonsoft.Json;
 using LiteDB;
 
 namespace dmtools
@@ -28,10 +28,16 @@ namespace dmtools
 
         public void Demo()
         {
-            using (var db = new LiteDatabase(@"Datenbank.db"))
-            {
-                var gegenstände = db.GetCollection<Gegenstand>("orte");
-            }
+            Stadt kasachstan = new Stadt("Kasachstan");
+            Poi geburtshaus = new Poi("Geburtshaus");
+
+            kasachstan.PoiListe.Add(geburtshaus);
+
+            Charakter neuchar = new Charakter();
+
+            Gegenstand krasserhammer = new Gegenstand();
+
+            neuchar.AddGegenstand(krasserhammer);
         }
 
         private void Btn_NeuerGegenstand(object sender, RoutedEventArgs e)
