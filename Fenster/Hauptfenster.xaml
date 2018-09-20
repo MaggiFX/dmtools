@@ -35,6 +35,7 @@
                     <StackPanel x:Name="RB_DiceKind" Orientation="Horizontal" Margin="10 40 0 0" HorizontalAlignment="Left" VerticalAlignment="Top">
                         <RadioButton IsChecked="True" Margin="0 0 20 0" GroupName="dicekind">d4</RadioButton>
                         <RadioButton Margin="0 0 20 0" GroupName="dicekind">d6</RadioButton>
+                        <RadioButton Margin="0 0 20 0" GroupName="dicekind">d8</RadioButton>
                         <RadioButton Margin="0 0 20 0" GroupName="dicekind">d10</RadioButton>
                         <RadioButton Margin="0 0 20 0" GroupName="dicekind">d12</RadioButton>
                         <RadioButton Margin="0 0 20 0" GroupName="dicekind">d20</RadioButton>
