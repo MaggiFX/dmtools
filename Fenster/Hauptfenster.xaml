@@ -18,8 +18,8 @@
 
             <TabItem Header="GM Tools">
                 <Grid>
-                    <StackPanel Orientation="Horizontal" Margin="10 10 0 0" HorizontalAlignment="Left" VerticalAlignment="Top">
-                        <RadioButton Margin="0 0 15 0" GroupName="dicecount">1</RadioButton>
+                    <StackPanel x:Name="RB_DiceCount" Orientation="Horizontal" Margin="10 10 0 0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <RadioButton IsChecked="True" Margin="0 0 15 0" GroupName="dicecount">1</RadioButton>
                         <RadioButton Margin="0 0 15 0" GroupName="dicecount">2</RadioButton>
                         <RadioButton Margin="0 0 15 0" GroupName="dicecount">3</RadioButton>
                         <RadioButton Margin="0 0 15 0" GroupName="dicecount">4</RadioButton>
@@ -29,20 +29,19 @@
                         <RadioButton Margin="0 0 15 0" GroupName="dicecount">8</RadioButton>
                         <RadioButton Margin="0 0 15 0" GroupName="dicecount">9</RadioButton>
                         <RadioButton Margin="0 0 15 0" GroupName="dicecount">10</RadioButton>
-                        <RadioButton Margin="0 0 0 0"  GroupName="dicecount">Custom</RadioButton>
+                        <RadioButton x:Name="RB_Custom" Margin="0 0 0 0"  GroupName="dicecount">Custom</RadioButton>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal" Margin="10 40 0 0" HorizontalAlignment="Left" VerticalAlignment="Top">
-                        <RadioButton Margin="0 0 15 0" GroupName="dicekind">d2</RadioButton>
-                        <RadioButton Margin="0 0 15 0" GroupName="dicekind">d4</RadioButton>
-                        <RadioButton Margin="0 0 15 0" GroupName="dicekind">d6</RadioButton>
-                        <RadioButton Margin="0 0 15 0" GroupName="dicekind">d10</RadioButton>
-                        <RadioButton Margin="0 0 15 0" GroupName="dicekind">d12</RadioButton>
-                        <RadioButton Margin="0 0 15 0" GroupName="dicekind">d20</RadioButton>
+                    <StackPanel x:Name="RB_DiceKind" Orientation="Horizontal" Margin="10 40 0 0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <RadioButton IsChecked="True" Margin="0 0 20 0" GroupName="dicekind">d4</RadioButton>
+                        <RadioButton Margin="0 0 20 0" GroupName="dicekind">d6</RadioButton>
+                        <RadioButton Margin="0 0 20 0" GroupName="dicekind">d10</RadioButton>
+                        <RadioButton Margin="0 0 20 0" GroupName="dicekind">d12</RadioButton>
+                        <RadioButton Margin="0 0 20 0" GroupName="dicekind">d20</RadioButton>
                         <RadioButton Margin="0 0 0 0"  GroupName="dicekind">d100</RadioButton>
                     </StackPanel>
 
-                    <TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Width="60" Height="20" Margin="420 37 0 0">1d1</TextBox>
+                    <TextBox x:Name="TB_CustomRoll" VerticalAlignment="Top" HorizontalAlignment="Left" Width="60" Height="20" Margin="420 37 0 0">1d1</TextBox>
 
                     <Button VerticalAlignment="Top" HorizontalAlignment="Left" Width="30" Height="30" Margin="10 70 0 0" Click="Btn_Würfeln">Roll</Button>
                     <TextBox x:Name="TB_RollResult" VerticalAlignment="Top" HorizontalAlignment="Left" Width="430" Height="20" Margin="50 75 0 0"></TextBox>

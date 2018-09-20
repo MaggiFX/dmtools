@@ -9,6 +9,8 @@ namespace dmtools
     static class Würfler
     {
         public static Random rand = new Random();
+        public static int Würfelmenge { get; set; }
+        public static int Würfelart { get; set; }
 
         public static string Roll(int dicecount, int dicekind)
         {

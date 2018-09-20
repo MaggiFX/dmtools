@@ -28,7 +28,7 @@ namespace dmtools
 
         public void Setup()
         {
-             
+
         }
 
         private void Btn_NeuerGegenstand(object sender, RoutedEventArgs e)
@@ -93,11 +93,40 @@ namespace dmtools
 
         private void Btn_Würfeln(object sender, RoutedEventArgs e)
         {
-            int a = 10;
-            int b = 10;
+            if(RB_Custom.IsChecked == true)
+            {
+                try
+                {
+                    Würfler.Würfelmenge = Convert.ToInt32(TB_CustomRoll.Text.Substring(0, TB_CustomRoll.Text.IndexOf("d")));
+                    Würfler.Würfelart = Convert.ToInt32(TB_CustomRoll.Text.Substring(TB_CustomRoll.Text.IndexOf("d") + 1));
+                }
+                catch
+                {
+                    MessageBoxResult hinweis = MessageBox.Show("Schreibweise: 0d0");
+                }
+            }
+            else
+            {
+                foreach (RadioButton cycle in RB_DiceCount.Children)
+                {
+                    if (cycle.IsChecked == true)
+                    {
+                        Würfler.Würfelmenge = Convert.ToInt32(cycle.Content);
+                    }
+                }
 
+                foreach (RadioButton cycle in RB_DiceKind.Children)
+                {
+                    if (cycle.IsChecked == true)
+                    {
+                        Würfler.Würfelart = Convert.ToInt32(cycle.Content.ToString().Substring(1));
+                    }
+                }
+            }
 
-            TB_RollResult.Text = Würfler.Roll(a,b);
+            TB_RollResult.Text = Würfler.Roll(Würfler.Würfelmenge, Würfler.Würfelart);
+            Würfler.Würfelmenge = 1;
+            Würfler.Würfelart = 1;
         }
     }
 }
