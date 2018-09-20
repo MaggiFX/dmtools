@@ -34,6 +34,7 @@ namespace dmtools
         {
             Gegenstand neu = new Gegenstand();
 
+            neu.Id = Datenbank.CountGegenstand() + 1;
 
             neu.Name = TB_Name.Text;
             neu.Wert = Convert.ToInt32(TB_Wert.Text);
@@ -41,7 +42,7 @@ namespace dmtools
             neu.Seltenheit = SB_Seltenheit.Text;
             neu.Beschreibung = new TextRange(TB_Beschreibung.Document.ContentStart, TB_Beschreibung.Document.ContentEnd).Text;
 
-            Datenbank.AddGegenstand(neu);
+            Datenbank.Add(neu);
 
             this.Close();
         }

@@ -15,27 +15,61 @@
             <ColumnDefinition Width="49*"/>
         </Grid.ColumnDefinitions>
         <TabControl Margin="10,10,10,10" Grid.ColumnSpan="2">
-            
+
             <TabItem Header="GM Tools">
                 <Grid>
+                    <StackPanel Orientation="Horizontal" Margin="10 10 0 0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <RadioButton Margin="0 0 15 0" GroupName="dicecount">1</RadioButton>
+                        <RadioButton Margin="0 0 15 0" GroupName="dicecount">2</RadioButton>
+                        <RadioButton Margin="0 0 15 0" GroupName="dicecount">3</RadioButton>
+                        <RadioButton Margin="0 0 15 0" GroupName="dicecount">4</RadioButton>
+                        <RadioButton Margin="0 0 15 0" GroupName="dicecount">5</RadioButton>
+                        <RadioButton Margin="0 0 15 0" GroupName="dicecount">6</RadioButton>
+                        <RadioButton Margin="0 0 15 0" GroupName="dicecount">7</RadioButton>
+                        <RadioButton Margin="0 0 15 0" GroupName="dicecount">8</RadioButton>
+                        <RadioButton Margin="0 0 15 0" GroupName="dicecount">9</RadioButton>
+                        <RadioButton Margin="0 0 15 0" GroupName="dicecount">10</RadioButton>
+                        <RadioButton Margin="0 0 0 0"  GroupName="dicecount">Custom</RadioButton>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="10 40 0 0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <RadioButton Margin="0 0 15 0" GroupName="dicekind">d2</RadioButton>
+                        <RadioButton Margin="0 0 15 0" GroupName="dicekind">d4</RadioButton>
+                        <RadioButton Margin="0 0 15 0" GroupName="dicekind">d6</RadioButton>
+                        <RadioButton Margin="0 0 15 0" GroupName="dicekind">d10</RadioButton>
+                        <RadioButton Margin="0 0 15 0" GroupName="dicekind">d12</RadioButton>
+                        <RadioButton Margin="0 0 15 0" GroupName="dicekind">d20</RadioButton>
+                        <RadioButton Margin="0 0 0 0"  GroupName="dicekind">d100</RadioButton>
+                    </StackPanel>
+
+                    <TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Width="60" Height="20" Margin="420 37 0 0">1d1</TextBox>
+
+                    <Button VerticalAlignment="Top" HorizontalAlignment="Left" Width="30" Height="30" Margin="10 70 0 0" Click="Btn_Würfeln">Roll</Button>
+                    <TextBox x:Name="TB_RollResult" VerticalAlignment="Top" HorizontalAlignment="Left" Width="430" Height="20" Margin="50 75 0 0"></TextBox>
+
+
 
                 </Grid>
             </TabItem>
 
             <TabItem Header="Gegenstände">
                 <Grid>
-                    <Button Content="Neu..." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 10 0 0" Width="80" Height="30" Click="Btn_NeuerGegenstand"/>
-                    <Button Content="Import Json" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,50,0,0" Width="80" Height="30" Click="Btn_NeuerGegenstandJson"/>
-                    <Button Content="Suchen" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100 10 0 0" Width="80" Height="30" Click="SucheGegenstand"></Button>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="770*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Neu..." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 10 0 0" Width="80" Height="30" Click="Btn_NeuerGegenstand" Grid.ColumnSpan="2"/>
+                    <Button Content="Import Json" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,50,0,0" Width="80" Height="30" Click="Btn_NeuerGegenstandJson" Grid.ColumnSpan="2"/>
+                    <Button Content="Suchen" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="74,10,0,0" Width="80" Height="30" Click="SucheGegenstand" Grid.Column="1"></Button>
 
-                    <Label Margin="190,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="50">Name</Label>
-                    <TextBox x:Name="SuchName" Margin="240,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="30"></TextBox>
-                    <Label Margin="410,10,0,0" Content="Min-Wert" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="60"/>
-                    <TextBox x:Name="SuchMinWert" Margin="470,10,0,0" Width="60" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <Label Margin="540,10,0,0" Content="Max-Wert" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="70"/>
-                    <TextBox x:Name="SuchMaxWert" Margin="610,10,0,0" Width="60" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Label Margin="164,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="50" Grid.Column="1">Name</Label>
+                    <TextBox x:Name="SuchName" Margin="214,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="30" Grid.Column="1"></TextBox>
+                    <Label Margin="384,10,0,0" Content="Min-Wert" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="60" Grid.Column="1"/>
+                    <TextBox x:Name="SuchMinWert" Margin="444,10,0,0" Width="60" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Label Margin="514,10,0,0" Content="Max-Wert" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="70" Grid.Column="1"/>
+                    <TextBox x:Name="SuchMaxWert" Margin="584,10,0,0" Width="60" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
 
-                    <ListView x:Name="ErgebnisseGegenstand" Margin="100,50,10,10">
+                    <ListView x:Name="ErgebnisseGegenstand" Margin="74,50,10,10" Grid.Column="1">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Id" Width="40" DisplayMemberBinding="{Binding Id}"/>
@@ -47,7 +81,7 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    
+
 
                 </Grid>
             </TabItem>
@@ -55,7 +89,7 @@
             <TabItem Header="Orte">
                 <Grid>
                     <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin=" 10" Width="80" Click="Btn_NeuerOrt">Neuer Ort...</Button>
-                    
+
                     <TreeView x:Name="OrteTree" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="240" MinHeight="700" Margin="10 40 0 10">
                         <TreeViewItem Header="Azeroth">
                             <TreeViewItem Header="Kalimdor">
@@ -90,7 +124,7 @@
 
                     <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="260 70 10 10">Beschreibung</Label>
                     <RichTextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="260 100 10 10"></RichTextBox>
-                    
+
                 </Grid>
             </TabItem>
 

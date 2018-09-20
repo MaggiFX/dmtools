@@ -23,21 +23,12 @@ namespace dmtools
         public MainWindow()
         {
             InitializeComponent();
-            Demo();
+            Setup();
         }
 
-        public void Demo()
+        public void Setup()
         {
-            Stadt kasachstan = new Stadt("Kasachstan");
-            Poi geburtshaus = new Poi("Geburtshaus");
-
-            kasachstan.PoiListe.Add(geburtshaus);
-
-            Charakter neuchar = new Charakter();
-
-            Gegenstand krasserhammer = new Gegenstand();
-
-            neuchar.AddGegenstand(krasserhammer);
+             
         }
 
         private void Btn_NeuerGegenstand(object sender, RoutedEventArgs e)
@@ -98,6 +89,13 @@ namespace dmtools
                     });
                 }
             }
+        }
+
+        private void Btn_Würfeln(object sender, RoutedEventArgs e)
+        {
+            TB_RollResult.Text = Würfler.Roll(20,20);
+
+            
         }
     }
 }

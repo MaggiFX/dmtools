@@ -99,7 +99,6 @@
     <Compile Include="Klassen\Systeme\Geld.cs" />
     <Compile Include="Klassen\Wissen\Partei.cs" />
     <Compile Include="Klassen\Lebewesen\Charakter.cs" />
-    <Compile Include="Klassen\Lebewesen\SpielerCharakter.cs" />
     <Compile Include="Fenster\Hauptfenster.xaml.cs">
       <DependentUpon>Hauptfenster.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -111,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Klassen\Wissen\Notiz.cs" />
+    <Compile Include="Klassen\Würfler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
