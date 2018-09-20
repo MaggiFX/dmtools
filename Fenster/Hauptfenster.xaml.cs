@@ -93,9 +93,11 @@ namespace dmtools
 
         private void Btn_Würfeln(object sender, RoutedEventArgs e)
         {
-            TB_RollResult.Text = Würfler.Roll(20,20);
+            int a = 10;
+            int b = 10;
 
-            
+
+            TB_RollResult.Text = Würfler.Roll(a,b);
         }
     }
 }
