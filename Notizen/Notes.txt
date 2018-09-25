@@ -1,0 +1,56 @@
+﻿Charakter hat:
+x	 1 Rasse			race
+x	 1 Klasse		class (für den Anfang zumindest)
+x	 6 Ability		abilities
+x	18 Skill		skill
+x	 1 Armorclass	ac
+x	 1 int			GesamtLevel
+x	 1 Hintergrund	background
+x	 1 List<string>	sprachen
+x	 1 int			proficiency
+x	 1 int			initiative
+x	 1 int			passiveperception
+
+
+Rasse hat:
+x	1 string	name
+x	1 Ability	abilityadjustments
+x	1 string	körpergröße
+x	1 string	geschwindigkeit
+
+
+Klasse hat:
+x	1 string name
+x	1 int hitDieSides
+x	1 int hitDieCount
+x	//n Startgegenstände, Waffen, Gold, usw...
+
+
+Ability hat:
+x	1 enum name (str, dex, con, int, wis, cha)
+x	1 int total
+x	1 int abilitymod
+x	1 int editmod
+x	1 int racemod
+x	1 int miscmod
+
+
+Armorclass hat:
+x	1 int total
+x	1 int base
+x	1 int armorbonus
+x	1 int schildbonus
+x	1 int statbonus
+x	1 int naturalarmor
+x	1 int miscbonus
+
+
+Skill hat:
+x	1 enum		name (Akrobatik, Umgang mit Tieren, Arkanes Wissen, Athletik...)
+x	1 string	relevantAbility
+x	1 int
+
+
+Hintergrund hat:
+x	//n Startgegenstände, Waffen, Gold, usw...
+
