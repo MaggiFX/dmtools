@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Klassen\Datenbank.cs" />
     <Compile Include="Klassen\Gegenstände\Gegenstand.cs" />
+    <Compile Include="Klassen\Helfer.cs" />
     <Compile Include="Klassen\Orte\Kontinent.cs" />
     <Compile Include="Klassen\Orte\Land.cs" />
     <Compile Include="Klassen\Orte\Poi.cs" />

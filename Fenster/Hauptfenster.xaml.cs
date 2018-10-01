@@ -85,8 +85,15 @@ namespace dmtools
                         Wert = i.Wert,
                         Gewicht = i.Gewicht,
                         Seltenheit = i.Seltenheit,
-                        Beschreibung = i.Beschreibung
+                        Beschreibung = Helfer.StringEinzeiler(i.Beschreibung)
                     });
+
+                    
+                }
+
+                foreach (var j in ErgebnisseGegenstand.Items)
+                {
+                    
                 }
             }
         }

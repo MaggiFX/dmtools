@@ -80,6 +80,14 @@
                                 <GridViewColumn Header="Beschreibung" DisplayMemberBinding="{Binding Beschreibung}"/>
                             </GridView>
                         </ListView.View>
+
+                        <ListView.Resources>
+                            <ContextMenu x:Key="cmButton">
+                                <MenuItem Header="Test1"></MenuItem>
+                                <MenuItem Header="Test2"></MenuItem>
+                            </ContextMenu>
+                        </ListView.Resources>
+                        
                     </ListView>
 
 
