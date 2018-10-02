@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace dmtools
 {
+
     class Gegenstand
     {
         public enum Rarity { Müll = 0, Häufig, Selten, Episch, Legendär, Artefakt }
 
         public int    Id           { get; set; }
+        
         public string Name         { get; set; }
         public int    Wert         { get; set; }
         public double Gewicht      { get; set; }

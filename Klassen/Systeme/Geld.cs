@@ -8,7 +8,7 @@ namespace dmtools
 {
     class Geld
     {
-        public int Kupfer { get; set; } // 100 Münzen = 1 Kilo
+        public int Kupfer { get; set; } // 1 Münze = 10 gramm / 0,01 kg => 100 Münzen = 1kg
         public int Silber { get; set; } // 1 Silber = 10 Kupfer
         public int Gold   { get; set; } // 1 Gold = 10 Silber = 100 Kupfer
 
