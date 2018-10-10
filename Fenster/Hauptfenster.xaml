@@ -47,6 +47,10 @@
                     <Button VerticalAlignment="Top" HorizontalAlignment="Left" Width="30" Height="30" Margin="10 70 0 0" Click="Btn_Würfeln">Roll</Button>
                     <TextBox x:Name="TB_RollResult" VerticalAlignment="Top" HorizontalAlignment="Left" Width="430" Height="20" Margin="50 75 0 0"></TextBox>
 
+                    <Button VerticalAlignment="Top" HorizontalAlignment="Left" Width="30" Height="30" Margin="10 110 0 0" Click="Btn_Würfeln2">Mod</Button>
+                    <TextBox x:Name="TB_RollMod" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40" Height="20" Margin="50 115 0 0"></TextBox>
+                    <TextBox x:Name="TB_RollResult2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="380" Height="20" Margin="100 115 0 0"></TextBox>
+
 
 
                 </Grid>

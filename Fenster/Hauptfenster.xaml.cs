@@ -45,8 +45,6 @@ namespace dmtools
 
         private void Btn_NeuerOrt(object sender, RoutedEventArgs e)
         {
-            ErstellungOrt fenster = new ErstellungOrt();
-            fenster.Show();
         }
 
         private void SucheGegenstand(object sender, RoutedEventArgs e)
@@ -134,6 +132,54 @@ namespace dmtools
             TB_RollResult.Text = Würfler.Roll(Würfler.Würfelmenge, Würfler.Würfelart);
             Würfler.Würfelmenge = 1;
             Würfler.Würfelart = 1;
+        }
+
+        private void Btn_Würfeln2(object sender, RoutedEventArgs e)
+        {
+            if (RB_Custom.IsChecked == true)
+            {
+                try
+                {
+                    Würfler.Würfelmenge = Convert.ToInt32(TB_CustomRoll.Text.Substring(0, TB_CustomRoll.Text.IndexOf("d")));
+                    Würfler.Würfelart = Convert.ToInt32(TB_CustomRoll.Text.Substring(TB_CustomRoll.Text.IndexOf("d") + 1));
+                }
+                catch
+                {
+                    MessageBoxResult hinweis = MessageBox.Show("Schreibweise: 0d0");
+                }
+            }
+            else
+            {
+                foreach (RadioButton cycle in RB_DiceCount.Children)
+                {
+                    if (cycle.IsChecked == true)
+                    {
+                        Würfler.Würfelmenge = Convert.ToInt32(cycle.Content);
+                    }
+                }
+
+                foreach (RadioButton cycle in RB_DiceKind.Children)
+                {
+                    if (cycle.IsChecked == true)
+                    {
+                        Würfler.Würfelart = Convert.ToInt32(cycle.Content.ToString().Substring(1));
+                    }
+                }
+
+                try
+                {
+                    Würfler.Würfelmod = Convert.ToInt32(TB_RollMod.Text);
+                }
+                catch
+                {
+                    MessageBoxResult hinweis = MessageBox.Show("Mod als 'x' oder '-x' eintragen");
+                }
+            }
+
+            TB_RollResult2.Text = Würfler.Roll(Würfler.Würfelmenge, Würfler.Würfelart, Würfler.Würfelmod);
+            Würfler.Würfelmenge = 1;
+            Würfler.Würfelart = 1;
+            Würfler.Würfelmod = 0;
         }
     }
 }

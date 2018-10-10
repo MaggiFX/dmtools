@@ -32,7 +32,7 @@ namespace dmtools
 
         private void Erstellen_Click(object sender, RoutedEventArgs e)
         {
-            Gegenstand neu = new Gegenstand();
+            var neu = new Gegenstand();
 
             neu.Id = Datenbank.CountGegenstand() + 1;
 
