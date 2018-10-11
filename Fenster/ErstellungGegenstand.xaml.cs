@@ -34,8 +34,6 @@ namespace dmtools
         {
             var neu = new Gegenstand();
 
-            neu.Id = Datenbank.CountGegenstand() + 1;
-
             neu.Name = TB_Name.Text;
             neu.Wert = Convert.ToInt32(TB_Wert.Text);
             neu.Gewicht = Convert.ToDouble(TB_Gewicht.Text);
