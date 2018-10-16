@@ -87,6 +87,7 @@
     <Compile Include="Klassen\Helfer.cs" />
     <Compile Include="Klassen\Orte\Kontinent.cs" />
     <Compile Include="Klassen\Orte\Land.cs" />
+    <Compile Include="Klassen\Orte\Lokation.cs" />
     <Compile Include="Klassen\Orte\Poi.cs" />
     <Compile Include="Klassen\Orte\Stadt.cs" />
     <Compile Include="Klassen\Orte\Welt.cs" />

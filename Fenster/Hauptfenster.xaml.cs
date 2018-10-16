@@ -45,6 +45,11 @@ namespace dmtools
 
         private void Btn_NeuerOrt(object sender, RoutedEventArgs e)
         {
+            var n = OrteTree.SelectedItem as TreeViewItem;
+            var m = new TreeViewItem();
+            m.Header = "Neu";
+
+            n.Items.Add(m);
         }
 
         private void SucheGegenstand(object sender, RoutedEventArgs e)

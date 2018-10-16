@@ -133,6 +133,7 @@
                                 </TreeViewItem>
                             </TreeViewItem>
                         </TreeViewItem>
+                        <TreeViewItem x:Name="RootItem" Header="ROOT"></TreeViewItem>
                     </TreeView>
 
                     <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="149,10,0,0" Grid.Column="1">Ortsname</Label>
