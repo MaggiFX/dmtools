@@ -57,45 +57,45 @@
             </TabItem>
 
             <TabItem Header="Gegenstände">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="13*"/>
-                        <ColumnDefinition Width="770*"/>
-                    </Grid.ColumnDefinitions>
-                    <Button Content="Neu..." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 10 0 0" Width="80" Height="30" Click="Btn_NeuerGegenstand" Grid.ColumnSpan="2"/>
-                    <Button Content="Import Json" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,50,0,0" Width="80" Height="30" Click="Btn_NeuerGegenstandJson" Grid.ColumnSpan="2"/>
-                    <Button Content="Suchen" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="74,10,0,0" Width="80" Height="30" Click="SucheGegenstand" Grid.Column="1"></Button>
+                <Border Padding="5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
 
-                    <Label Margin="164,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="50" Grid.Column="1">Name</Label>
-                    <TextBox x:Name="SuchName" Margin="214,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="30" Grid.Column="1"></TextBox>
-                    <Label Margin="384,10,0,0" Content="Min-Wert" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="60" Grid.Column="1"/>
-                    <TextBox x:Name="SuchMinWert" Margin="444,10,0,0" Width="60" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Margin="514,10,0,0" Content="Max-Wert" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="70" Grid.Column="1"/>
-                    <TextBox x:Name="SuchMaxWert" Margin="584,10,0,0" Width="60" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
+                        <StackPanel Grid.Column="0">
+                            <Button Margin="5" Click="SucheGegenstand">Suchen</Button>
+                            <Button Margin="5" Click="Btn_NeuerGegenstand">Neu</Button>
+                            <Button Margin="5" Click="Btn_NeuerGegenstandJson">Neu aus Json</Button>
+                        </StackPanel>
 
-                    <ListView x:Name="ErgebnisseGegenstand" Margin="74,50,10,10" Grid.Column="1">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Header="Id" Width="40" DisplayMemberBinding="{Binding Id}"/>
-                                <GridViewColumn Header="Name" Width="250" DisplayMemberBinding="{Binding Name}"/>
-                                <GridViewColumn Header="Wert" Width="80" DisplayMemberBinding="{Binding Wert}"/>
-                                <GridViewColumn Header="Gewicht" Width="80" DisplayMemberBinding="{Binding Gewicht}"/>
-                                <GridViewColumn Header="Seltenheit" Width="80" DisplayMemberBinding="{Binding Seltenheit}"/>
-                                <GridViewColumn Header="Beschreibung" DisplayMemberBinding="{Binding Beschreibung}"/>
-                            </GridView>
-                        </ListView.View>
+                        <StackPanel Margin="10 0 0 0" Grid.Column="1">
+                            <StackPanel Orientation="Horizontal">
+                                <Label>Name</Label>
+                                <TextBox Width="100" Margin="0 0 20 0" x:Name="SuchName" />
+                                <Label>Min-Wert</Label>
+                                <TextBox Width="100" Margin="0 0 20 0" x:Name="SuchMinWert" />
+                                <Label>Max-Wert</Label>
+                                <TextBox Width="100" Margin="0 0 20 0" x:Name="SuchMaxWert" />
+                            </StackPanel>
+                            <ListView Margin="0 9 0 0" x:Name="ErgebnisseGegenstand">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Id" Width="40" DisplayMemberBinding="{Binding Id}"/>
+                                        <GridViewColumn Header="Name" Width="250" DisplayMemberBinding="{Binding Name}"/>
+                                        <GridViewColumn Header="Wert" Width="80" DisplayMemberBinding="{Binding Wert}"/>
+                                        <GridViewColumn Header="Gewicht" Width="80" DisplayMemberBinding="{Binding Gewicht}"/>
+                                        <GridViewColumn Header="Seltenheit" Width="80" DisplayMemberBinding="{Binding Seltenheit}"/>
+                                        <GridViewColumn Header="Beschreibung" DisplayMemberBinding="{Binding Beschreibung}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
 
-                        <ListView.Resources>
-                            <ContextMenu x:Key="cmButton">
-                                <MenuItem Header="Test1"></MenuItem>
-                                <MenuItem Header="Test2"></MenuItem>
-                            </ContextMenu>
-                        </ListView.Resources>
-
-                    </ListView>
-
-
-                </Grid>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                
             </TabItem>
 
             <TabItem Header="Orte">
