@@ -45,11 +45,20 @@ namespace dmtools
 
         private void Btn_NeuerOrt(object sender, RoutedEventArgs e)
         {
-            var n = OrteTree.SelectedItem as TreeViewItem;
-            var m = new TreeViewItem();
-            m.Header = "Neu";
+            if (OrteTree.SelectedItem == null)
+            {
+                var m = new TreeViewItem();
+                m.Header = "Neu";
+                OrteTree.Items.Add(m);
+            }
+            else
+            {
+                var n = OrteTree.SelectedItem as TreeViewItem;
+                var m = new TreeViewItem();
+                m.Header = "Neu";
 
-            n.Items.Add(m);
+                n.Items.Add(m);
+            }
         }
 
         private void SucheGegenstand(object sender, RoutedEventArgs e)
@@ -185,6 +194,15 @@ namespace dmtools
             Würfler.Würfelmenge = 1;
             Würfler.Würfelart = 1;
             Würfler.Würfelmod = 0;
+        }
+
+        private void Btn_NeuerSpieler(object sender, RoutedEventArgs e)
+        {
+            Tabs_Spieler.Items.Add(new TabItem
+            {
+                Header = "NeuerSpieler"
+            });
+
         }
     }
 }

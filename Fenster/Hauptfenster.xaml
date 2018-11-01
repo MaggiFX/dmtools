@@ -14,7 +14,7 @@
             <ColumnDefinition Width="23*"/>
             <ColumnDefinition Width="49*"/>
         </Grid.ColumnDefinitions>
-        <TabControl Margin="10,10,10,10" Grid.ColumnSpan="2">
+        <TabControl Margin="2 2 2 2" Grid.ColumnSpan="2">
 
             <TabItem Header="GM Tools">
                 <Grid>
@@ -107,33 +107,6 @@
                     <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="80" Click="Btn_NeuerOrt">Neuer Ort...</Button>
 
                     <TreeView x:Name="OrteTree" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="240" MinHeight="700" Margin="10 40 0 10" Grid.ColumnSpan="2">
-                        <TreeViewItem Header="Azeroth">
-                            <TreeViewItem Header="Kalimdor">
-                                <TreeViewItem Header="Durotan">
-                                    <TreeViewItem Header="Orgrimmar">
-                                        <TreeViewItem Header="Ragefire Chasm"></TreeViewItem>
-                                    </TreeViewItem>
-                                </TreeViewItem>
-                            </TreeViewItem>
-                            <TreeViewItem Header="Östliche Königreiche">
-                                <TreeViewItem Header="Wald von Elwynn">
-                                    <TreeViewItem Header="Stormwind">
-                                        <TreeViewItem Header="Verließ von Stormwind"></TreeViewItem>
-                                    </TreeViewItem>
-                                </TreeViewItem>
-                            </TreeViewItem>
-                        </TreeViewItem>
-                        <TreeViewItem Header="Scherbenwelt">
-                            <TreeViewItem Header="Hauptkontinent">
-                                <TreeViewItem Header="Wald von Terrokar">
-                                    <TreeViewItem Header="Shattrath">
-                                        <TreeViewItem Header="Terrasse der Scryer"></TreeViewItem>
-                                        <TreeViewItem Header="Terrasse der Aldor"></TreeViewItem>
-                                    </TreeViewItem>
-                                </TreeViewItem>
-                            </TreeViewItem>
-                        </TreeViewItem>
-                        <TreeViewItem x:Name="RootItem" Header="ROOT"></TreeViewItem>
                     </TreeView>
 
                     <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="149,10,0,0" Grid.Column="1">Ortsname</Label>
@@ -146,15 +119,13 @@
             </TabItem>
 
             <TabItem Header="Spieler">
-                <Grid>
-                    <Button Content="Neuer Spieler" x:Name="Btn_NeuerSpieler" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="30" Margin="10 10 0 0"></Button>
-
-                    <ComboBox x:Name="SB_Spieler" HorizontalAlignment="Left" Height="30" Margin="140 10 0 0" VerticalAlignment="Top" Width="120">
-                        <ComboBoxItem>Spieler 1</ComboBoxItem>
-                        <ComboBoxItem>Spieler 2</ComboBoxItem>
-                    </ComboBox>
-
-                </Grid>
+                <TabControl x:Name="Tabs_Spieler" Margin="4 4 4 4">
+                    <TabItem Header="Manager">
+                        <Grid>
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 10 10 10" Click="Btn_NeuerSpieler">Neuer Spieler</Button>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
             </TabItem>
 
         </TabControl>
