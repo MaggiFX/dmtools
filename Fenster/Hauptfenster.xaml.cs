@@ -31,12 +31,20 @@ namespace dmtools
 
         }
 
+        private void Btn_NeuerSpieler(object sender, RoutedEventArgs e)
+        {
+            Tabs_Spieler.Items.Add(new TabItem
+            {
+                Header = "Spielername"
+            });
+
+        }
+
         private void Btn_NeuerGegenstand(object sender, RoutedEventArgs e)
         {
             ErstellungGegenstand fenster = new ErstellungGegenstand();
             fenster.Show();
         }
-
         private void Btn_NeuerGegenstandJson(object sender, RoutedEventArgs e)
         {
             ErstellungGegenstandJson fenster = new ErstellungGegenstandJson();
@@ -61,7 +69,7 @@ namespace dmtools
             }
         }
 
-        private void SucheGegenstand(object sender, RoutedEventArgs e)
+        private void Btn_SucheGegenstand(object sender, RoutedEventArgs e)
         {
             ErgebnisseGegenstand.Items.Clear();
 
@@ -147,7 +155,6 @@ namespace dmtools
             Würfler.Würfelmenge = 1;
             Würfler.Würfelart = 1;
         }
-
         private void Btn_Würfeln2(object sender, RoutedEventArgs e)
         {
             if (RB_Custom.IsChecked == true)
@@ -194,15 +201,6 @@ namespace dmtools
             Würfler.Würfelmenge = 1;
             Würfler.Würfelart = 1;
             Würfler.Würfelmod = 0;
-        }
-
-        private void Btn_NeuerSpieler(object sender, RoutedEventArgs e)
-        {
-            Tabs_Spieler.Items.Add(new TabItem
-            {
-                Header = "NeuerSpieler"
-            });
-
         }
     }
 }
